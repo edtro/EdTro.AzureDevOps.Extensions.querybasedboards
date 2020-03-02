@@ -14,4 +14,4 @@ And has the following dependencies:
 
 Many thanks to these teams.
 
-> NOTE: this the second version of this extension. The first version was created by a former colleague of ours. This version is however rebuild completely, based on the new Azure DevOps extension libraries and the new Formula Design System.
+> NOTE: this the second version of this extension. The first version was created by a former colleague of ours, all the credits for comming up with this idea is going to him! This version is however rebuild completely, based on the new Azure DevOps extension libraries and the new Formula Design System.
