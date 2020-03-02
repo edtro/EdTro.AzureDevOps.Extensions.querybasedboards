@@ -44,6 +44,6 @@ Please feel free to leave a behind your feedback within the Q & A section. We lo
 ## Changelog
 > 0.20062 initial version
 
-Created by Realdolmen - a GFI company, please contact us at: https://www.realdolmen.com/nl/solution/microsoft-application-lifecycle-management
+Created by Realdolmen - a GFI company, please contact us at: https://www.realdolmen.com/en/solution/microsoft-application-lifecycle-management
 
 If this project inspires you and/or you have specific requirements that are not not implemented within the standard and/or this project, please feel free to contact us, so we can see how we can help.
