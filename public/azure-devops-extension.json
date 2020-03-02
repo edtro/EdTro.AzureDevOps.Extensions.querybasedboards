@@ -1,0 +1,75 @@
+{
+  "manifestVersion": 1,
+  "id": "EdTro-AzureDevOps-Extensions-QueryBasedBoards",
+  "publisher": "EdTro",
+  "version": "0.1.0",
+  "name": "Query Based Boards",
+  "description": "Realdolmen extension for Azure DevOps - Query Based Boards",
+  "categories": [
+    "Azure Boards"
+  ],
+  "demands": [
+    "api-version/5.0" 
+  ],
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "tags": [
+    "Board",
+    "Boards",
+    "Query",
+    "Queries",
+    "WIQL"
+  ],
+  "scopes": [
+    "vso.extension.data",
+    "vso.extension.data_write",
+    "vso.work",
+    "vso.work_write"
+  ],
+  "icons": {
+    "default": "img/logo.png"
+  },
+  "content": {
+    "details": {
+      "path": "details.md"
+    }
+  },
+  "files": [
+    {
+      "path": "img",
+      "addressable": true,
+      "packagePath": "img"
+    },
+    {
+      "path": "bundle.js",
+      "addressable": true
+    },
+    {
+      "path": "details.md",
+      "addressable": true
+    },
+    {
+      "path": "index.html",
+      "addressable": true
+    }
+  ],
+  "contributions": [
+    {
+      "id": "EdTro-AzureDevOps-Extensions-QueryBasedBoards.BoardTab",
+      "type": "ms.vss-web.tab",
+      "description": "Adds a 'Board' tab to the query results",
+      "targets": [
+        "ms.vss-work-web.query-tabs"
+      ],
+      "properties": {
+        "uri": "index.html",
+        "title": "Query Based Boards",
+        "name": "Board",
+        "dynamic": true
+      }
+    }
+  ]
+}
