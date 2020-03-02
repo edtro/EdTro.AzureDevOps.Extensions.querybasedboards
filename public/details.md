@@ -42,7 +42,7 @@ The settings pane:
 Please feel free to leave a behind your feedback within the Q & A section. We love to hear from you. 
 
 ## Changelog
-> 0.20061 initial version
+> 0.20062 initial version
 
 Created by Realdolmen - a GFI company, please contact us at: https://www.realdolmen.com/nl/solution/microsoft-application-lifecycle-management
 
