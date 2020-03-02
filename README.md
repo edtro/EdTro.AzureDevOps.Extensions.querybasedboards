@@ -1,6 +1,6 @@
 # EdTro.AzureDevOps.Extensions.querybasedboards
 Query Based Boards enables a user to visualize the result of work items queries as a board
-This extension for Azure DevOps Services/Server is available on the markteplace ... TODO
+This extension for Azure DevOps Services/Server is available on the markteplace [here](https://marketplace.visualstudio.com/items?itemName=realdolmen.EdTro-AzureDevOps-Extensions-QueryBasedBoards-Public)
 
 View the detail documentation [here](public/details.md)
 
