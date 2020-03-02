@@ -46,5 +46,4 @@ Please feel free to leave a behind your feedback within the Q & A section. We lo
 
 Created by Realdolmen - a GFI company, please contact us at: https://www.realdolmen.com/nl/solution/microsoft-application-lifecycle-management
 
-If this project inspires you and/or you have specific requirements that are not not implemented within the standard and/or this project, please feel free to contact us, so we can see how we can help and discuss rates. 
-*One of the possibilities is, that we can create a private fork, implement your requirements and distribute this privately to your organization.*
+If this project inspires you and/or you have specific requirements that are not not implemented within the standard and/or this project, please feel free to contact us, so we can see how we can help.
