@@ -2,7 +2,7 @@
 
 > LICENSE: This is a free showcase project to show the possibilities of creating extensions for Azure DevOps Server/Services and the Formula Design System (ref: https://developer.microsoft.com/en-us/azure-devops/). It is provided by Realdolmen 'as-is' under the general MIT license issued within the support page (on GitHub). So feel free to install it, try it out and use it in any of your organizations. But do this at your own risk, no guarantees and/or no warrentees of any kind are provided.
 
-> NOTE: This the *second* version of this project and is completely recreated and based on the new Azure DevOps libraries and the Formula Design System. The old and original project is still available on the marketplace (ref: https://marketplace.visualstudio.com/items?itemName=realdolmen.querybasedboards) and was founded/created by a former colleague of ours. 
+> NOTE: This the *second* version of this project and is completely recreated and based on the new Azure DevOps libraries and the Formula Design System. The old and original project is still available on the marketplace (ref: https://marketplace.visualstudio.com/items?itemName=realdolmen.querybasedboards) and was founded/created by a former colleague of ours.
 
 ## What's special about 'Query Based Boards'? 
 * The result of work item queries are visualized as a board ('flat' queries as a Kanban board and 'one-hop' queries as a Taskboard)
@@ -33,16 +33,20 @@ The settings pane:
 <br/>
 
 ## Known limitations
-* This extension is currently only available on Azure DevOps Services and Azure DevOps Server (demands the API version 5.0)
+* This extension is currently only available on Azure DevOps Services and Azure DevOps Server (demands the API version 5.0 at least)
 * Only 'flat' and 'one-hop' queries are implemented
 * Only tested and validated on Chrome and Edge (IE does not work as of yet)
 * Touch is not yet supported
+* On an on-premise instance it can be possible that opening a workitem from the board does not work (unfortunately this seems to be an issue within the SDK)
 
 ## Feedback
 Please feel free to leave a behind your feedback within the Q & A section. We love to hear from you. 
 
 ## Changelog
-> 0.20062 initial version
+> 0.20064
+> Solved minor bugs for on-prem
+> 0.20062 
+> initial version
 
 Created by Realdolmen - a GFI company, please contact us at: https://www.realdolmen.com/en/solution/microsoft-application-lifecycle-management
 
