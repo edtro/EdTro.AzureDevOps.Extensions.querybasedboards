@@ -1,5 +1,5 @@
 # EdTro.AzureDevOps.Extensions.querybasedboards
-Query Based Boards enables a user to visualize the result of work items queries as a board and visualize the dependencies.
+Query Based Boards enables a user to visualize the result of work item queries as a board and track the dependencies.
 
 This extension for Azure DevOps Services/Server is available on the markteplace [here](https://marketplace.visualstudio.com/items?itemName=realdolmen.EdTro-AzureDevOps-Extensions-QueryBasedBoards-Public)
 
@@ -11,8 +11,10 @@ And has the following dependencies:
 * azure-devops-extension-sdk, see details [here](https://github.com/Microsoft/azure-devops-extension-sdk)
 * azure-devops-extension-api, see detals [here](https://github.com/Microsoft/azure-devops-extension-api)
 * azure-devops-ui (this is the new Formula Design System), see information [here](https://developer.microsoft.com/en-us/azure-devops/)
-* react-dnd and react-dnd-html5-backend, see details [here](github.com/react-dnd/react-dnd/)
+* react-dnd, see details [here](https://github.com/react-dnd/react-dnd/) and for a tutorial [here](https://react-dnd.github.io/react-dnd/docs/tutorial)
+* react-dnd-multi-backend, see details [here](https://github.com/LouisBrunner/dnd-multi-backend/tree/master/packages/react-dnd-multi-backend)
 
-Many thanks to these teams.
+Many thanks to these teams and people.
 
-> NOTE: this the second version of this extension. The first version was created by a former colleague of ours, all the credits for coming up with this idea is going to him! This version is however rebuild completely, based on the new Azure DevOps extension libraries and the new Formula Design System. The old and original project is still available on the marketplace [here](https://marketplace.visualstudio.com/items?itemName=realdolmen.querybasedboards)
+> NOTE: this the second version of this extension. The first version was created by a former colleague of ours, all the credits for coming up with this idea is going to him! This version is however rebuild completely, based on the new Azure DevOps extension libraries and the new Formula Design System. 
+> The old and original project is still available on the marketplace [here](https://marketplace.visualstudio.com/items?itemName=realdolmen.querybasedboards)
