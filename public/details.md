@@ -1,15 +1,15 @@
-**Query Based Boards** enables a user to visualize the result of work items queries as a board and visualize the dependencies
+**Query Based Boards** enables a user to visualize the result of work item queries as a board and track the dependencies
 
 > LICENSE: This is a free showcase project to show the possibilities of creating extensions for Azure DevOps Server/Services and the Formula Design System (ref: https://developer.microsoft.com/en-us/azure-devops/). It is provided by Realdolmen 'as-is' under the general MIT license issued within the support page (on GitHub). So feel free to install it, try it out and use it in any of your organizations. But do this at your own risk, no guarantees and/or no warrentees of any kind are provided.
 
-> NOTE: this the second version of this extension. The first version was created by a former colleague of ours, all the credits for coming up with this idea is going to him! This version is however rebuild completely, based on the new Azure DevOps extension libraries and the new Formula Design System. The old and original project is still available on the marketplace (ref: https://marketplace.visualstudio.com/items?itemName=realdolmen.querybasedboards).
+> NOTE: this is the second version of this extension. The first version was created by a former colleague of ours, all the credits for coming up with this idea is going to him! This version is however rebuild completely, based on the new Azure DevOps extension libraries and the new Formula Design System. The old and original project is still available on the marketplace (ref: https://marketplace.visualstudio.com/items?itemName=realdolmen.querybasedboards).
 
 ## What's special about 'Query Based Boards'? 
 * The result of work item queries are visualized as a board ('flat' queries as a Kanban board and 'one-hop' queries as a Taskboard)
-* Drag-n-drop work items to columns to adjust the specific State of the work item... this project is using the React-Dnd (ref: https://react-dnd.github.io/react-dnd/about) library
+* Drag-n-drop work items to columns to adjust the specific state of the work item. This project is using the React-Dnd (ref: https://react-dnd.github.io/react-dnd/about) library with the Read-Dnd-Multi-Backend (ref: https://louisbrunner.github.io/dnd-multi-backend/packages/react-dnd-multi-backend/)
 * Uses the REST Api to determin the columns dynamically of the work items that are within the result of the work item queries
-* Can show the dependencies/relations between 'successor' and 'predecessor' work items as arrows (only shows the relations of the work items already displayed on the board)
-* Can zoom in and out to get a better overview on your work
+* Can show and track the dependencies/relations between 'successor' and 'predecessor' work items as arrows (only shows the relations of the work items already displayed on the board)
+* Can zoom in and out to get a better overview of your work
 
 ## How does it work?
 Open up the 'flat' or 'one-hop' query and next to [Results] tab, a new tab called 'Show as Board' or 'Show as Taskboard' is displayed. Select this tab and the query will be shown as a board.
@@ -42,9 +42,8 @@ An image of the kanban, zoomed in with relations:
 ## Known limitations
 * This extension is currently only available on Azure DevOps Services and Azure DevOps Server (demands the API version 5.0 at least)
 * Only 'flat' and 'one-hop' queries are implemented
-* Only tested and validated on Chrome and Edge (IE does not work as of yet)
-* Touch is not yet supported
-* Dependencies are only shown between work items that are within the resultset of the query
+* Only tested and validated on Chrome and Edge (IE does not work as of yet) for a regular non-touch device
+* Only tested and validated on Safari (IPhone) for a touch device
 
 (please review: https://github.com/edtro/EdTro.AzureDevOps.Extensions.querybasedboards/issues)
 
@@ -52,6 +51,8 @@ An image of the kanban, zoomed in with relations:
 Please feel free to leave a behind your feedback within the Q & A section. We love to hear from you. 
 
 ## Changelog
+> 0.20096 
+> Solved some minor bugs, optimized the calculation of the arrow paths and implemented the support for touch devices
 > 0.20065
 > Improved the styling of the arrows and added zoom level slider
 > 0.20064

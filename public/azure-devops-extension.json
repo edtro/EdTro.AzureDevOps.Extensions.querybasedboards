@@ -1,10 +1,11 @@
 {
+  //"baseUri": "",
   "manifestVersion": 1,
   "id": "EdTro-AzureDevOps-Extensions-QueryBasedBoards",
   "publisher": "EdTro",
   "version": "0.1.0",
   "name": "Query Based Boards",
-  "description": "Realdolmen extension for Azure DevOps - Query Based Boards",
+  "description": "Query Based Boards enables a user to visualize the result of work item queries as a board and track the dependencies",
   "categories": [
     "Azure Boards"
   ],
@@ -21,7 +22,9 @@
     "Boards",
     "Query",
     "Queries",
-    "WIQL"
+    "WIQL",
+    "Dependency",
+    "Dependencies"
   ],
   "scopes": [
     "vso.extension.data",
@@ -74,7 +77,7 @@
   ],
   "links": {
     "support": {
-      "uri": "https://github.com/edtro/EdTro.AzureDevOps.Extensions.querybasedboards"
+      "uri": "https://github.com/edtro/EdTro.AzureDevOps.Extensions.querybasedboards/issues"
     },
     "repository": {
       "uri": "https://github.com/edtro/EdTro.AzureDevOps.Extensions.querybasedboards"
