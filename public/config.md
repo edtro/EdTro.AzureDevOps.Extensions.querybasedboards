@@ -1,4 +1,10 @@
 ## Using the configuration
+
+At the moment these options are implemented:
+- setup colunmns
+- <del>splitup columns in doing/done</del>
+- <del>setup swimlanes</del>
+
 Unfortunately, I did not have the time to complete this documentation yet. But I have included the model of the actual configuration, see:
 
 ```javascript
