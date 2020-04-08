@@ -1,7 +1,7 @@
 ## Using the configuration
 
 At the moment these options are implemented:
-- setup colunmns
+- setup columns
 - <del>splitup columns in doing/done</del>
 - <del>setup swimlanes</del>
 
