@@ -1,12 +1,11 @@
 ## Using the configuration
-
 Unfortunately, I did not have the time to complete this documentation yet. But I have included the model of the actual configuration, see:
 
 ```javascript
 export interface IConfigDataSetup {
     fields?: IConfigDataDisplayField[];
     columns?: IConfigDataColumn[];
-    swimlanes?: IConfigDataSwimlanes;    
+    swimlanes?: IConfigDataSwimlanes;
 }
 
 export interface IConfigDataDisplayField {
@@ -16,7 +15,8 @@ export interface IConfigDataDisplayField {
 
 export interface IConfigDataColumn {
     name: string;
-    title: string;   
+    title: string;
+    isBacklog?: boolean;
     doingDone?: IConfigDataColumnDoingDone;
 }
 
@@ -47,7 +47,8 @@ And here is a sample:
    "columns":[
       {
          "name":"New",
-         "title":"New - Proposed"
+         "title":"New - Proposed",
+         "isBacklog":true
       },
       {
          "name":"Active",
@@ -70,7 +71,8 @@ And here is a sample:
       },
       {
          "name":"Closed",
-         "title":"Completed"
+         "title":"Completed",
+         "isBacklog":true
       }
    ],
    "swimlanes":{
@@ -79,7 +81,7 @@ And here is a sample:
       "columnSpanTo":"Resolved",
       "values":[
          {
-            "value":true,
+            "value":"Yes",
             "title":"Is Blocked"
          }
       ]
