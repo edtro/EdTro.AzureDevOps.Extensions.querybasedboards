@@ -7,7 +7,7 @@
 ## What's special about 'Query Based Boards'? 
 * The result of work item queries are visualized as a board ('flat' queries as a Kanban board and 'one-hop' queries as a Taskboard)
 * Drag-n-drop work items to columns to adjust the specific state of the work item. This project is using the React-Dnd (ref: https://react-dnd.github.io/react-dnd/about) library with the Read-Dnd-Multi-Backend (ref: https://louisbrunner.github.io/dnd-multi-backend/packages/react-dnd-multi-backend/)
-* Uses the REST Api to determin the columns dynamically of the work items that are within the result of the work item queries
+* Uses the REST Api to determin the columns dynamically of the work items that are within the result of the work item queries (these can also be setup within the configuration hub)
 * Can show and track the dependencies/relations between 'successor' and 'predecessor' work items as arrows (only shows the relations of the work items already displayed on the board)
 * Can zoom in and out to get a better overview of your work
 
@@ -22,6 +22,7 @@ Options:
 * hover over an arrow to highlight the related work item cards
 * zoom in / out while setting the zoom level within the settings
 * click on the title of the work item to open and do possible modifications, these are directly reflected within the board
+* use the configuration hub (within the Teamproject settings) to do some additional setup (ref: https://github.com/edtro/EdTro.AzureDevOps.Extensions.querybasedboards/blob/master/public/config.md)
 
 An image of the taskboard:
 ![screenshot](img/taskboard.png)
@@ -35,8 +36,16 @@ The settings pane:
 ![screenshot](img/taskboard-settings.png)
 <br/>
 
-An image of the kanban, zoomed in with relations:
+An image of the kanban, using the high contrast dark theme and with relations:
+![screenshot](img/kanban.png)
+<br/>
+
+Same kanban board, but now zoomed out:
 ![screenshot](img/kanban-zoom.png)
+<br/>
+
+An image of the configuration hub within the TeamProject settings:
+![screenshot](img/config.png)
 <br/>
 
 ## Known limitations
@@ -51,6 +60,8 @@ An image of the kanban, zoomed in with relations:
 Please feel free to leave a behind your feedback within the Q & A section. We love to hear from you. 
 
 ## Changelog
+> 0.20104
+> Added the Config hub, implemented configuration of the columns and also added the option to collapse the backlog columns.
 > 0.20096 
 > Solved some minor bugs, optimized the calculation of the arrow paths and implemented the support for touch devices
 > 0.20065

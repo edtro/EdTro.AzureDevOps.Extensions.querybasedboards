@@ -63,15 +63,29 @@
     {
       "id": "EdTro-AzureDevOps-Extensions-QueryBasedBoards.BoardTab",
       "type": "ms.vss-web.tab",
-      "description": "Adds a 'Board' tab to the query results",
+      "description": "Adds a 'Query Based Boards - Show Board / Show Taskboard' tab to the query results",
       "targets": [
         "ms.vss-work-web.query-tabs"
       ],
       "properties": {
-        "uri": "index.html",
-        "title": "Query Based Boards",
+        "uri": "index.html?type=board",
+        "title": "Query Based Boards - Show Board / Show Taskboard",
         "name": "Board",
         "dynamic": true
+      }
+    },
+    {
+      "id": "EdTro-AzureDevOps-Extensions-QueryBasedBoards.ConfigTab",
+      "type": "ms.vss-web.hub",
+      "description": "Adds a 'Query Based Boards - Configuration' hub to the project admin group",
+      "targets": [
+        "ms.vss-web.project-admin-hub-group"
+      ],
+      "properties": {
+        "uri": "index.html?type=config",
+        "title": "Query Based Boards - Configuration",
+        "name": "Query Based Boards",
+        "order": 100
       }
     }
   ],

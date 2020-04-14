@@ -1,12 +1,21 @@
 ## Using the configuration
 
+Within the Teamprojects settings hub, you can find within the extensions section, the option to configure "Query Based Boards".
+
+At the moment these options are implemented:
+- setup columns
+- <del>splitup columns in doing/done</del>
+- <del>setup swimlanes</del>
+
+Please note, that whenever you select the Query Based Boards tab 'Show as board' or 'Show as taskboard', an configuration item is created. So first do this, before trying to configure the board for the query.
+
 Unfortunately, I did not have the time to complete this documentation yet. But I have included the model of the actual configuration, see:
 
 ```javascript
 export interface IConfigDataSetup {
     fields?: IConfigDataDisplayField[];
     columns?: IConfigDataColumn[];
-    swimlanes?: IConfigDataSwimlanes;    
+    swimlanes?: IConfigDataSwimlanes;
 }
 
 export interface IConfigDataDisplayField {
@@ -16,7 +25,8 @@ export interface IConfigDataDisplayField {
 
 export interface IConfigDataColumn {
     name: string;
-    title: string;   
+    title: string;
+    isBacklog?: boolean;
     doingDone?: IConfigDataColumnDoingDone;
 }
 
@@ -47,7 +57,8 @@ And here is a sample:
    "columns":[
       {
          "name":"New",
-         "title":"New - Proposed"
+         "title":"Proposed",
+         "isBacklog":true
       },
       {
          "name":"Active",
@@ -62,15 +73,16 @@ And here is a sample:
       },
       {
          "name":"Test",
-         "title":"Testing"
+         "title":"Testing (this column will not be visible, because the 'name' does not map to a valid workitemtype state"
       },
       {
          "name":"Resolved",
-         "title":"Resolved..."
+         "title":"Resolved - Can be released"
       },
       {
          "name":"Closed",
-         "title":"Completed"
+         "title":"Completed",
+         "isBacklog":true
       }
    ],
    "swimlanes":{
@@ -79,7 +91,7 @@ And here is a sample:
       "columnSpanTo":"Resolved",
       "values":[
          {
-            "value":true,
+            "value":"Yes",
             "title":"Is Blocked"
          }
       ]
