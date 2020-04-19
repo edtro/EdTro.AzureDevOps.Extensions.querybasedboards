@@ -9,7 +9,8 @@
 * Drag-n-drop work items to columns to adjust the specific state of the work item. This project is using the React-Dnd (ref: https://react-dnd.github.io/react-dnd/about) library with the Read-Dnd-Multi-Backend (ref: https://louisbrunner.github.io/dnd-multi-backend/packages/react-dnd-multi-backend/)
 * Uses the REST Api to determin the columns dynamically of the work items that are within the result of the work item queries (these can also be setup within the configuration hub)
 * Can show and track the dependencies/relations between 'successor' and 'predecessor' work items as arrows (only shows the relations of the work items already displayed on the board)
-* Can zoom in and out to get a better overview of your work
+* Can zoom in and out to get a better overview of your work items
+* Create boards for visualizing workitems for multiple projects, while using the "query accross projects" option
 
 ## How does it work?
 Open up the 'flat' or 'one-hop' query and next to [Results] tab, a new tab called 'Show as Board' or 'Show as Taskboard' is displayed. Select this tab and the query will be shown as a board.
@@ -50,8 +51,9 @@ An image of the configuration hub within the TeamProject settings:
 
 ## Known limitations
 * This extension is currently only available on Azure DevOps Services and Azure DevOps Server (demands the API version 5.0 at least)
+* Be aware: this extension is created and supported for "on-line" first (like many other extensions). For "on-premises" instances there is limited support.
 * Only 'flat' and 'one-hop' queries are implemented
-* Only tested and validated on Chrome and Edge (IE does not work as of yet) for a regular non-touch device
+* Only tested and validated on Chrome, FireFox and Edge (the new Chronium based version) for a regular non-touch device
 * Only tested and validated on Safari (IPhone) for a touch device
 
 (please review: https://github.com/edtro/EdTro.AzureDevOps.Extensions.querybasedboards/issues)
@@ -60,6 +62,8 @@ An image of the configuration hub within the TeamProject settings:
 Please feel free to leave a behind your feedback within the Q & A section. We love to hear from you. 
 
 ## Changelog
+> 0.20109
+> Solved a minor bug regarding an invalid hex color code returned by the Rest API when using the 'old' xml process definitions
 > 0.20104
 > Added the Config hub, implemented configuration of the columns and also added the option to collapse the backlog columns.
 > 0.20096 

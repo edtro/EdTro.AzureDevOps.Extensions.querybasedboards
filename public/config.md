@@ -6,6 +6,7 @@ At the moment these options are implemented:
 - setup columns
 - <del>splitup columns in doing/done</del>
 - <del>setup swimlanes</del>
+- <del>display fields</del>
 
 Please note, that whenever you select the Query Based Boards tab 'Show as board' or 'Show as taskboard', an configuration item is created. So first do this, before trying to configure the board for the query.
 
