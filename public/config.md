@@ -52,7 +52,35 @@ export interface IConfigDataSwimlaneFieldValue {
 }
 ```
 
-And here is a sample:
+And here is an sample for just using columns (for a query with Epics and Features):
+```json
+{
+   "columns":[
+      {
+         "name":"New",
+         "title":"New/Backlog",
+         "isBacklog":true
+      },
+      {
+         "name":"In Progress",
+         "title":"In Progress/Active"
+      },
+      {
+         "name":"Test",
+         "title":"Testing - will not be shown"
+      },      
+      {
+         "name":"Done",
+         "title":"Completed/Done",
+         "isBacklog":true
+      }
+   ]
+}
+```
+NOTE: the "name" has to map to an actual state that is used within one of the work item types... so in this example the column "Test" will not be shown.
+
+
+And here is an example with swimlanes and doing/done... but that has not been implemented yet.
 ```json
 {
    "columns":[
