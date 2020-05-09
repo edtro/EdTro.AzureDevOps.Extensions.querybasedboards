@@ -26,7 +26,7 @@ export interface IConfigDataDisplayField {
 
 export interface IConfigDataColumn {
     name: string;
-    title: string;
+    title: string;   
     isBacklog?: boolean;
     doingDone?: IConfigDataColumnDoingDone;
 }
@@ -34,9 +34,9 @@ export interface IConfigDataColumn {
 export interface IConfigDataColumnDoingDone {
     field: string;
     doingTitle: string;
-    doingDefaultValue: any;
+    doingDefaultValue: boolean | number | string;
     doneTitle: string;
-    doneValue: any;
+    doneValue: boolean | number | string;
 }
 
 export interface IConfigDataSwimlanes {
@@ -47,7 +47,7 @@ export interface IConfigDataSwimlanes {
 }
 
 export interface IConfigDataSwimlaneFieldValue {
-    value: any;
+    value: boolean | number | string;
     title: string;
 }
 ```
