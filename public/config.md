@@ -2,7 +2,7 @@
 
 Within the Teamprojects settings hub, you can find within the extensions section, the option to configure "Query Based Boards".
 
-> Please note, that whenever you select the Query Based Boards tab 'Show as board' or 'Show as taskboard', an configuration item is *automatically created* for the specific query. So first do this, before trying to configure the board for the query.
+> Please note, that whenever you run a query and select the tab 'Show as board' or 'Show as taskboard', a configuration item is *automatically created* for the specific query. So first do this, before trying to configure the board for the query.
 
 At the moment these options are implemented:
 - setup columns
