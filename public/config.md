@@ -10,7 +10,7 @@ At the moment these options are implemented:
 - <del>setup swimlanes</del>
 - <del>display fields</del>
 
-Unfortunately, I did not have the time to complete this documentation yet. But I have included the model of the actual configuration, see:
+Unfortunately, I did not have the time to complete this documentation yet (or to create a user friendly UI). Sorry about that! But I have included the model of the actual configuration, see:
 
 ```javascript
 export interface IConfigDataSetup {
@@ -41,8 +41,6 @@ export interface IConfigDataColumnDoingDone {
 
 export interface IConfigDataSwimlanes {
     field: string;
-    columnSpanFrom: string;
-    columnSpanTo: string;
     values: IConfigDataSwimlaneFieldValue[];
 }
 
