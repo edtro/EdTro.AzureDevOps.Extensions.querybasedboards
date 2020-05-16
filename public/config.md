@@ -121,8 +121,6 @@ And here is an example with swimlanes and doing/done... but that has not been im
    ],
    "swimlanes":{
       "field":"Microsoft.VSTS.CMMI.Blocked",
-      "columnSpanFrom":"Active",
-      "columnSpanTo":"Resolved",
       "values":[
          {
             "value":"Yes",
