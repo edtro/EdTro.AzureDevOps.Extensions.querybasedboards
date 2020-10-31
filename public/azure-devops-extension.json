@@ -6,6 +6,14 @@
   "version": "0.1.0",
   "name": "Query Based Boards",
   "description": "Query Based Boards enables a user to visualize the result of work item queries as a board and track the dependencies",
+  "branding": {
+    "color": "rgb(217, 217, 217)",
+    "theme": "light"
+  },
+  //"branding": {
+  //  "color": "rgb(0, 85, 115)",
+  //  "theme": "dark"
+  //},
   "categories": [
     "Azure Boards"
   ],
@@ -90,6 +98,12 @@
     }
   ],
   "links": {
+    "privacypolicy": {
+      "uri": "https://github.com/edtro/EdTro.AzureDevOps.Extensions.querybasedboards/blob/master/public/privacy.md"
+    },
+    "license": {
+      "uri": "https://github.com/edtro/EdTro.AzureDevOps.Extensions.querybasedboards/blob/master/LICENSE"
+    },
     "support": {
       "uri": "https://github.com/edtro/EdTro.AzureDevOps.Extensions.querybasedboards/issues"
     },
