@@ -14,6 +14,7 @@ And has the following dependencies:
 * react-dnd, see details [here](https://github.com/react-dnd/react-dnd/) and for a tutorial [here](https://react-dnd.github.io/react-dnd/docs/tutorial)
 * react-dnd-multi-backend, see details [here](https://github.com/LouisBrunner/dnd-multi-backend/tree/master/packages/react-dnd-multi-backend)
 * some components that where missing in the Formula Design System, I have used from Fluent UI, see details [here](https://developer.microsoft.com/en-us/fluentui) 
+* lodash, see details [here](https://github.com/lodash/lodash)
 
 Many thanks to these teams and people.
 

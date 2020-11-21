@@ -1,55 +1,77 @@
 ## Using the configuration
 
-Within the Teamprojects settings hub, you can find within the extensions section, the option to configure "Query Based Boards".
+Within the Teamprojects settings hub, you can find within the extensions section, the option to configure "Query Based Boards". For each query a seperate configuration item is available, next to a **Global** configuration item (here you can define the settings/configs that should be used as default for all of the queries). 
 
 > Please note, that whenever you run a query and select the tab 'Show as board' or 'Show as taskboard', a configuration item is *automatically created* for the specific query. So first do this, before trying to configure the board for the query.
 
 At the moment these options are implemented:
+- settings
 - setup columns
 - splitup columns in doing/done **PREVIEW**
 - setup swimlanes **PREVIEW**
-- <del>display fields</del>
+- display fields **PREVIEW**
+- backlog/board tabs **PREVIEW**
 
 Unfortunately, I did not have the time to complete this documentation yet (or to create a user friendly UI). Sorry about that! But I have included the model of the actual configuration, see:
 
 ```javascript
 export interface IConfigDataSetup {
-    fields?: IConfigDataDisplayField[];
-    columns?: IConfigDataColumn[];
-    swimlanes?: IConfigDataSwimlanes;
+    settings?: IConfigDataSettings,
+    backlogTabs?: IConfigDataBacklogTab[],
+    fields?: IConfigDataDisplayField[],
+    columns?: IConfigDataColumn[],
+    swimlanes?: IConfigDataSwimlanes
+}
+
+export interface IConfigDataSettings {
+    showFilter?: boolean,
+    showArrows?: boolean,
+    zoomLevel?: number, //0, 1, 2 or 3  
+    showProject?: boolean
+    showStoryPoints?: boolean,
+    showTags?: boolean, 
+}
+
+export interface IConfigDataBacklogTab {
+    tabNumber: string, //"1", "2", "3", "4" or "5"
+    level: string, //"", "Epics", "Features", "Stories" or "Backlog items"
+    teamId: string, //can also be "", next to the actual id
+    queryId: string, //only the actual id
+    title: string
 }
 
 export interface IConfigDataDisplayField {
-    name: string;
-    title: string;
+    name: string,
+    title: string,    
 }
 
 export interface IConfigDataColumn {
-    name: string;
-    title: string;   
-    isBacklog?: boolean;
-    doingDone?: IConfigDataColumnDoingDone;
+    name: string,
+    title: string,   
+    isBacklog?: boolean,
+    doingDone?: IConfigDataColumnDoingDone
 }
 
 export interface IConfigDataColumnDoingDone {
-    field: string;
-    doingTitle: string;
-    doingDefaultValue: boolean | number | string;
-    doneTitle: string;
-    doneValue: boolean | number | string;
+    field: string,
+    doingTitle: string,
+    doingDefaultValue: boolean | number | string,
+    doneTitle: string,
+    doneValue: boolean | number | string,
 }
 
 export interface IConfigDataSwimlanes {
-    field: string;
-    defaultValue: boolean | number | string;
-    values: IConfigDataSwimlaneFieldValue[];
+    field: string,
+    defaultValue: boolean | number | string,
+    values: IConfigDataSwimlaneFieldValue[],
 }
 
 export interface IConfigDataSwimlaneFieldValue {
-    value: boolean | number | string;
-    title: string;
+    value: boolean | number | string,
+    title: string,
 }
 ```
+<br/>
 
 ## Important notice
 When you configure the query to split up the columns into Doing/Done and/or use the swimlanes, be aware that _this extension will also do updates to the workitem in other fields than just the 'System.State' field_.
@@ -98,6 +120,7 @@ Here is an sample for just using columns (for a query with Epics and Features):
    ]
 }
 ```
+<br/>
 NOTE: the "name" has to map to an actual state that is used within one of the work item types... so within this example the column "Test" will not be shown.
 
 
@@ -147,3 +170,39 @@ And here is an example with swimlanes and doing/done... but that has not been im
    }
 }
 ```
+<br/>
+
+Here is an example of using default values for a setting and the setup of backlogtabs. This json is inserted into the 'Global' configuration.
+```json
+{
+   "settings":{
+      "showFilter":true
+   },
+   "backlogTabs":[
+      {
+         "tabNumber":"1",
+         "level":"Epics",
+         "teamId":"",
+         "queryId":"b5de9cf7-20ff-4bdd-95ab-c181cbb93de2",
+         "title":"Custom Board"
+      },
+      {
+         "tabNumber":"1",
+         "level":"Features",
+         "teamId":"",
+         "queryId":"7fa63f27-6fbc-4812-9dbf-8bc8ee185b0d",
+         "title":"Custom Board"
+      },
+      {
+         "tabNumber":"1",
+         "level":"",
+         "teamId":"",
+         "queryId":"c28d86e3-a236-4e0b-ae84-8f8f173547e9",
+         "title":"Custom Board"
+      }
+   ]
+}
+```
+<br/>
+
+> Please note: for the display fields the types Guid, History, Html and Identity are not supported.

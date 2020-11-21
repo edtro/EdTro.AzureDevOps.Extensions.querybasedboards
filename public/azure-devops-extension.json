@@ -55,7 +55,12 @@
       "packagePath": "img"
     },
     {
-      "path": "bundle.js",
+      "path": "js",
+      "addressable": true,
+      "packagePath": "js"
+    },
+    {
+      "path": "index.bundle.js",
       "addressable": true
     },
     {
@@ -83,6 +88,86 @@
       }
     },
     {
+      "id": "EdTro-AzureDevOps-Extensions-QueryBasedBoards.BacklogTab1",
+      "type": "ms.vss-web.tab",
+      "description": "Adds a 'Query Based Boards - Show Board / Show Taskboard' tab to the product/itetation backlog view",
+      "targets": [
+        "ms.vss-work-web.product-backlog-tabs",
+        "ms.vss-work-web.iteration-backlog-tabs",
+        "ms.vss-work-web.backlog-board-pivot-filter-menu"
+      ],
+      "properties": {
+        "uri": "index.html?type=backlog&id=1",
+        "title": "Query Based Boards - Show Board / Show Taskboard",
+        "name": "Board",
+        "dynamic": true
+      }
+    },
+    {
+      "id": "EdTro-AzureDevOps-Extensions-QueryBasedBoards.BacklogTab2",
+      "type": "ms.vss-web.tab",
+      "description": "Adds a 'Query Based Boards - Show Board / Show Taskboard' tab to the product/itetation backlog view",
+      "targets": [
+        "ms.vss-work-web.product-backlog-tabs",
+        "ms.vss-work-web.iteration-backlog-tabs",
+        "ms.vss-work-web.backlog-board-pivot-filter-menu"
+      ],
+      "properties": {
+        "uri": "index.html?type=backlog&id=2",
+        "title": "Query Based Boards - Show Board / Show Taskboard",
+        "name": "Board",
+        "dynamic": true
+      }
+    },
+    {
+      "id": "EdTro-AzureDevOps-Extensions-QueryBasedBoards.BacklogTab3",
+      "type": "ms.vss-web.tab",
+      "description": "Adds a 'Query Based Boards - Show Board / Show Taskboard' tab to the product/itetation backlog view",
+      "targets": [
+        "ms.vss-work-web.product-backlog-tabs",
+        "ms.vss-work-web.iteration-backlog-tabs",
+        "ms.vss-work-web.backlog-board-pivot-filter-menu"
+      ],
+      "properties": {
+        "uri": "index.html?type=backlog&id=3",
+        "title": "Query Based Boards - Show Board / Show Taskboard",
+        "name": "Board",
+        "dynamic": true
+      }
+    },
+    {
+      "id": "EdTro-AzureDevOps-Extensions-QueryBasedBoards.BacklogTab4",
+      "type": "ms.vss-web.tab",
+      "description": "Adds a 'Query Based Boards - Show Board / Show Taskboard' tab to the product/itetation backlog view",
+      "targets": [
+        "ms.vss-work-web.product-backlog-tabs",
+        "ms.vss-work-web.iteration-backlog-tabs",
+        "ms.vss-work-web.backlog-board-pivot-filter-menu"
+      ],
+      "properties": {
+        "uri": "index.html?type=backlog&id=4",
+        "title": "Query Based Boards - Show Board / Show Taskboard",
+        "name": "Board",
+        "dynamic": true
+      }
+    },
+    {
+      "id": "EdTro-AzureDevOps-Extensions-QueryBasedBoards.BacklogTab5",
+      "type": "ms.vss-web.tab",
+      "description": "Adds a 'Query Based Boards - Show Board / Show Taskboard' tab to the product/itetation backlog view",
+      "targets": [
+        "ms.vss-work-web.product-backlog-tabs",
+        "ms.vss-work-web.iteration-backlog-tabs",
+        "ms.vss-work-web.backlog-board-pivot-filter-menu"
+      ],
+      "properties": {
+        "uri": "index.html?type=backlog&id=5",
+        "title": "Query Based Boards - Show Board / Show Taskboard",
+        "name": "Board",
+        "dynamic": true
+      }
+    },
+    {
       "id": "EdTro-AzureDevOps-Extensions-QueryBasedBoards.ConfigTab",
       "type": "ms.vss-web.hub",
       "description": "Adds a 'Query Based Boards - Configuration' hub to the project admin group",
@@ -97,6 +182,26 @@
       }
     }
   ],
+  "screenshots": [
+    {
+      "path": "img/taskboard.png"
+    },
+    {
+      "path": "img/taskboard-arrows.png"
+    },
+    {
+      "path": "img/taskboard-settings.png"
+    },
+    {
+      "path": "img/kanban.png"
+    },
+    {
+      "path": "img/kanban-zoom.png"
+    },
+    {
+      "path": "img/config.png"
+    }
+  ],
   "links": {
     "privacypolicy": {
       "uri": "https://github.com/edtro/EdTro.AzureDevOps.Extensions.querybasedboards/blob/master/public/privacy.md"
@@ -109,6 +214,12 @@
     },
     "repository": {
       "uri": "https://github.com/edtro/EdTro.AzureDevOps.Extensions.querybasedboards"
+    },
+    "getstarted": {
+      "uri": "https://github.com/edtro/EdTro.AzureDevOps.Extensions.querybasedboards/blob/master/public/config.md"
+    },
+    "learn": {
+      "uri": "https://youtu.be/tod0S2QXO-E"
     }
   }
 }
