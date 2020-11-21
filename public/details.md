@@ -17,7 +17,9 @@ Here is a [link](https://youtu.be/tod0S2QXO-E) to an introduction video on YouTu
 * This extension is currently only available on Azure DevOps Services and Azure DevOps Server (demands the API version 5.0 at least);
 * Be aware: this extension is created and supported for "on-line" first (like many other extensions). For "on-premises" instances there is limited support;
 * Only 'flat' and 'one-hop' queries are implemented;
-* The columns are only based on the field `System.State`;
+* When you use a 'one-hop' query, only the `Parent-Child` relations are suppported;
+* The dependency arrows are based on `Successor-Predecessor` relations only;
+* The columns are based on the field `System.State` only;
 * Only tested and validated on Chrome, FireFox and Edge (the new Chronium based version) for a regular non-touch device;
 * Only tested and validated on Safari (IPhone) for a touch device;
 * A couple of features are still in 'preview'.
@@ -50,3 +52,4 @@ Created by **Inetum-Realdolmen**, please contact us at: https://www.realdolmen.c
 <br/>
 ![screenshot](img/inetum-realdolmen-becomes.png)
 <br/>
+
