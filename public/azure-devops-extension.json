@@ -60,7 +60,7 @@
       "packagePath": "js"
     },
     {
-      "path": "index.bundle.js",
+      "path": "index.qbb.bundle.js",
       "addressable": true
     },
     {
