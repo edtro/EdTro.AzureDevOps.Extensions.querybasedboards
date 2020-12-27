@@ -11,15 +11,15 @@
 Here is a [link](https://youtu.be/tod0S2QXO-E) to an introduction video on YouTube to get you started (or _click on the picture below_, it takes less than 4 minutes to watch):
 [![screenshot](img/youtube.png)](https://youtu.be/tod0S2QXO-E)
 
-> Please feel free to subscribe to the channel and watch other movies regarding the possibilities of this extension.  When this version was released, only the introduction video was available, but more will follow soon. 
+> Please feel free to subscribe to the [YouTube channel](https://www.youtube.com/channel/UCPhOzbTeOeNiy3-sIgE0U5g) and watch other movies regarding the possibilities of this extension. When this version was released, only a few videos are available, but more will follow soon with detailed instructions regarding this extension. 
 
 ## Known limitations
-* This extension is currently only available on Azure DevOps Services and Azure DevOps Server (demands the API version 5.0 at least);
+* This extension is currently only available on Azure DevOps Services and Azure DevOps Server (demands the API version 5.0 at least; so it works on-line and on the on-premises versions 2019 and 2020);
 * Be aware: this extension is created and supported for "on-line" first (like many other extensions). For "on-premises" instances there is limited support;
 * Only 'flat' and 'one-hop' queries are implemented;
 * When you use a 'one-hop' query, only the `Parent-Child` relations are suppported;
 * The dependency arrows are based on `Successor-Predecessor` relations only;
-* The columns are based on the field `System.State` only;
+* The columns are based on the values of the field `System.State` only;
 * Only tested and validated on Chrome, FireFox and Edge (the new Chronium based version) for a regular non-touch device;
 * Only tested and validated on Safari (IPhone) for a touch device;
 * A couple of features are still in 'preview'.
@@ -33,6 +33,8 @@ Please feel free to leave a behind your feedback within the Q & A section. We lo
 
 | Version | Description |
 |---------|-------------| 
+| 0.20362 | Solved a couple of minor rendering issues. <br/><br/>For the PREVIEW feature regarding configuring the colums: Added workitem counters and WIP limits to the columns, added the ability to adjust the column width, show multiple items next to each other, setting the column as collapsed as default and added **Parent Transition Mappings**. <br/><br/>For the PREVIEW feature regarding the quick filters, added for the taskboards the option to filter on if children exist and the option to filter on the parent state. <br/><br/>A big noticeable change is, is that the chevrons to collapse the columns are now displayed just like the standard boards (arranged to the right).  <br/><br/>**VIDEO:** I have added a new video to my YouTube channel, regarding the 'Taskboard', but is also showing you a couple of the new features. Please check it out @ https://youtu.be/ag0LeNaR8Tc  |
+| 0.20338 | Solved a bug regarding missing a field within the projectCollection. |
 | 0.20326 | Added the filterbar, the ability to add extra fields to a work item card through the settings and the option to configure settings per query and globally.<br/><br/>Again added two **PREVIEW** features: <br/>1. add extra fields to a work item card through the configuration<br/> 2. and the option to add tabs to the Backlog/Boards hub.<br/><br/>_Please note: these items are still in preview, so please report questions/bugs etc. to contribute on these features, but please do not expect immediate response and/or follow up._|
 | 0.20308 | Solved a bug regarding cross-project relations/dependencies that they were not shown (not displayed as arrows). |
 | 0.20305 | Solved a bug regarding the configured 'Backlog' columns (the collapse icon was still shown based on the StateCategory like the auto columns), did some rebranding and added some extra guidance when dragging an item (the columns, where it is allowed to drag the item to, are highlighted and the original position is marked).<br/><br/>Also added two **PREVIEW** features: <br/>1. the option to use the 'As Of' date, that will allow you to browse back into time (for example: how many items where active yesterday?)<br/>2. added the ability to configure swimlanes and split columns into doing/done (to use this, please take a look at the section regarding the configuration hub). <br/> <br/> _Please note: these items are still in preview, so please report questions/bugs etc. to contribute on these features, but please do not expect immediate response and/or follow up._|

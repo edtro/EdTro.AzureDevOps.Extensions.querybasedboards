@@ -5,6 +5,8 @@ This extension for Azure DevOps Services/Server is available on the markteplace 
 
 View the detail documentation [here](public/details.md)
 
+Please feel free to take a look at the [YouTube channel](https://www.youtube.com/channel/UCPhOzbTeOeNiy3-sIgE0U5g) that I have created for this extension.
+
 ## Information
 This project is bootstrapped with Fluent UI React, see details [here](https://github.com/microsoft/fluentui/blob/master/apps/fabric-website/src/pages/Overviews/GetStartedPage/docs/web/GetStartedDevelopSimple.md)
 And has the following dependencies:

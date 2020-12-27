@@ -1,3 +1,8 @@
+# Getting started
+## The YouTube channel
+Recently I have started a YouTube channel for this extension, to provide you instruction videos regarding the possibilities of this extension.
+Please make sure to check it out @ https://www.youtube.com/channel/UCPhOzbTeOeNiy3-sIgE0U5g. 
+
 ## Using the configuration
 
 Within the Teamprojects settings hub, you can find within the extensions section, the option to configure "Query Based Boards". For each query a seperate configuration item is available, next to a **Global** configuration item (here you can define the settings/configs that should be used as default for all of the queries). 
@@ -27,7 +32,7 @@ export interface IConfigDataSettings {
     showFilter?: boolean,
     showArrows?: boolean,
     zoomLevel?: number, //0, 1, 2 or 3  
-    showProject?: boolean
+    showProject?: boolean,
     showStoryPoints?: boolean,
     showTags?: boolean, 
 }
@@ -49,7 +54,11 @@ export interface IConfigDataColumn {
     name: string,
     title: string,   
     isBacklog?: boolean,
-    doingDone?: IConfigDataColumnDoingDone
+    isCollapsed?: boolean, //backlog=true
+    width?: number, //backlog=false && between 1 and 5
+    wipLimit?: number, //backlog=false && if >= 0 then count and limit will be displayed 
+    doingDone?: IConfigDataColumnDoingDone,
+    parentTransitionMapping?: IConfigDataColumnParentTransitionMapping
 }
 
 export interface IConfigDataColumnDoingDone {
@@ -58,6 +67,11 @@ export interface IConfigDataColumnDoingDone {
     doingDefaultValue: boolean | number | string,
     doneTitle: string,
     doneValue: boolean | number | string,
+}
+
+export interface IConfigDataColumnParentTransitionMapping {
+    parentToName: string, //the 'state' value of the parent, when a 'state' is transitioned to this 'state' (or column)
+    allChildren: boolean //are all other children within this 'state' (or column)
 }
 
 export interface IConfigDataSwimlanes {
@@ -72,6 +86,8 @@ export interface IConfigDataSwimlaneFieldValue {
 }
 ```
 <br/>
+
+Please be aware of the restraints that I have put into the comments.
 
 ## Important notice
 When you configure the query to split up the columns into Doing/Done and/or use the swimlanes, be aware that _this extension will also do updates to the workitem in other fields than just the 'System.State' field_.
@@ -124,7 +140,7 @@ Here is an sample for just using columns (for a query with Epics and Features):
 NOTE: the "name" has to map to an actual state that is used within one of the work item types... so within this example the column "Test" will not be shown.
 
 
-And here is an example with swimlanes and doing/done... but that has not been implemented yet.
+And here is an example with swimlanes, columns splitup into doing/done, a custom width, wiplimits and backlog columns that are collapsed by default:
 ```json
 {
    "columns":[
@@ -136,6 +152,8 @@ And here is an example with swimlanes and doing/done... but that has not been im
       {
          "name":"Active",
          "title":"Active - In development",
+         "wipLimit":5,
+         "width": 2,
          "doingDone":{
             "field":"Custom.IsDone",
             "doingTitle":"Working on it...",
@@ -150,12 +168,14 @@ And here is an example with swimlanes and doing/done... but that has not been im
       },
       {
          "name":"Resolved",
-         "title":"Resolved - Can be released"
+         "title":"Resolved - Can be released",
+         "wipLimit":7
       },
       {
          "name":"Closed",
          "title":"Completed",
-         "isBacklog":true
+         "isBacklog":true,
+         "isCollapsed": true
       }
    ],
    "swimlanes":{
@@ -172,7 +192,48 @@ And here is an example with swimlanes and doing/done... but that has not been im
 ```
 <br/>
 
-Here is an example of using default values for a setting and the setup of backlogtabs. This json is inserted into the 'Global' configuration.
+An example for the Parent Transition Mappings (this **PREVIEW** feature is great for simple rollup scenario's/flows):
+```json
+{
+     "columns":[
+      {
+         "name":"New",
+         "title":"New",
+         "isBacklog":true,
+         "parentTransitionMapping": 
+         {
+             "parentToName":"Active",
+             "parentToNameAll":"New",
+             "allChildren": true
+         } 
+      },
+      {
+         "name":"Active",
+         "title":"Active",
+         "parentTransitionMapping": 
+         {
+             "parentToName":"Active",
+             "parentToNameAll":"Active",
+             "allChildren": false
+         } 
+      },      
+      {
+         "name":"Closed",
+         "title":"Closed",
+         "isBacklog":true,
+         "parentTransitionMapping": 
+         {
+             "parentToName":"Active",
+             "parentToNameAll":"Closed",
+             "allChildren": true
+         }  
+      }
+   ]
+}
+```
+<br/>
+
+Here is an example of using default values for a setting and the setup of backlogtabs. This json is inserted into the 'Global' configuration (you can setup 'settings' and 'backlogTabs' globally only).
 ```json
 {
    "settings":{
@@ -182,27 +243,48 @@ Here is an example of using default values for a setting and the setup of backlo
       {
          "tabNumber":"1",
          "level":"Epics",
-         "teamId":"",
-         "queryId":"b5de9cf7-20ff-4bdd-95ab-c181cbb93de2",
+         "teamId":"", // add the GUID of your team here, but you can leave it empty
+         "queryId":"00000000-0000-0000-0000-000000000000", // add the GUID of your query here
          "title":"Custom Board"
       },
       {
          "tabNumber":"1",
          "level":"Features",
-         "teamId":"",
-         "queryId":"7fa63f27-6fbc-4812-9dbf-8bc8ee185b0d",
+         "teamId":"", // add the GUID of your team here, but you can leave it empty
+         "queryId":"00000000-0000-0000-0000-000000000000", // add the GUID of your query here
          "title":"Custom Board"
       },
       {
          "tabNumber":"1",
-         "level":"",
-         "teamId":"",
-         "queryId":"c28d86e3-a236-4e0b-ae84-8f8f173547e9",
+         "level":"", // you can leave the level empty, please be aware of the sortorder of your json. Because the config that is found first, that matches the criteria, will be used.
+         "teamId":"", // add the GUID of your team here, but you can leave it empty
+         "queryId":"00000000-0000-0000-0000-000000000000", // add the GUID of your query here
          "title":"Custom Board"
       }
    ]
 }
 ```
 <br/>
+
+And finally an example of adding extra fields on the workitem cards:
+```json
+{
+   "fields":[
+      {
+         "name":"System.AreaPath",
+         "title":"Area",       
+      },
+      {
+         "name":"System.IterationPath",
+         "title":"Sprint",       
+      },
+      {
+         "name":"Microsoft.VSTS.Common.Priority",
+         "title":"Priority",       
+      },
+   ]
+}
+```
+
 
 > Please note: for the display fields the types Guid, History, Html and Identity are not supported.
