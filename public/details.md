@@ -8,7 +8,11 @@
 
 
 ## Introduction
-Here is a [link](https://youtu.be/tod0S2QXO-E) to an introduction video on YouTube to get you started (or _click on the picture below_, it takes less than 4 minutes to watch):
+If you are in need of more flexibility regarding the boards, or you want to build a custom flow and the standard boards won't fit to your needs.
+
+This extension can be of great help to you! Just create a **flat** or **one-hop** query and show it as a board, it is as easy as that.
+
+Here is a [link](https://youtu.be/tod0S2QXO-E) to an introduction video on YouTube with an overview of the available features, to get you started (or _click on the picture below_, it takes less than 4 minutes to watch):
 [![screenshot](img/youtube.png)](https://youtu.be/tod0S2QXO-E)
 
 > Please feel free to subscribe to the [YouTube channel](https://www.youtube.com/channel/UCPhOzbTeOeNiy3-sIgE0U5g) and watch other movies regarding the possibilities of this extension. When this version was released, only a few videos are available, but more will follow soon with detailed instructions regarding this extension. 
@@ -33,6 +37,8 @@ Please feel free to leave a behind your feedback within the Q & A section. We lo
 
 | Version | Description |
 |---------|-------------| 
+| 0.21020 | Added an import function for the advanced configurations while using a standard Microsoft REST api, see the new [imports.md](https://github.com/edtro/EdTro.AzureDevOps.Extensions.querybasedboards/blob/master/public/imports.md) document. |
+| 0.21005 | Changed the way the 'Assigned To' icon is rendered (to reflect the standard). |
 | 0.20362 | Solved a couple of minor rendering issues. <br/><br/>For the PREVIEW feature regarding configuring the colums: Added workitem counters and WIP limits to the columns, added the ability to adjust the column width, show multiple items next to each other, setting the column as collapsed as default and added **Parent Transition Mappings**. <br/><br/>For the PREVIEW feature regarding the quick filters, added for the taskboards the option to filter on if children exist and the option to filter on the parent state. <br/><br/>A big noticeable change is, is that the chevrons to collapse the columns are now displayed just like the standard boards (arranged to the right).  <br/><br/>**VIDEO:** I have added a new video to my YouTube channel, regarding the 'Taskboard', but is also showing you a couple of the new features. Please check it out @ https://youtu.be/ag0LeNaR8Tc  |
 | 0.20338 | Solved a bug regarding missing a field within the projectCollection. |
 | 0.20326 | Added the filterbar, the ability to add extra fields to a work item card through the settings and the option to configure settings per query and globally.<br/><br/>Again added two **PREVIEW** features: <br/>1. add extra fields to a work item card through the configuration<br/> 2. and the option to add tabs to the Backlog/Boards hub.<br/><br/>_Please note: these items are still in preview, so please report questions/bugs etc. to contribute on these features, but please do not expect immediate response and/or follow up._|

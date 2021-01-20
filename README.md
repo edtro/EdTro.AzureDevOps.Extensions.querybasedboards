@@ -5,18 +5,14 @@ This extension for Azure DevOps Services/Server is available on the markteplace 
 
 View the detail documentation [here](public/details.md)
 
-Please feel free to take a look at the [YouTube channel](https://www.youtube.com/channel/UCPhOzbTeOeNiy3-sIgE0U5g) that I have created for this extension.
-
 ## Information
-This project is bootstrapped with Fluent UI React, see details [here](https://github.com/microsoft/fluentui/blob/master/apps/fabric-website/src/pages/Overviews/GetStartedPage/docs/web/GetStartedDevelopSimple.md)
+This project is bootstrapped with Fabric UI React, see details [here](https://developer.microsoft.com/en-us/fluentui#/get-started/web#option-1-quick-start)
 And has the following dependencies:
 * azure-devops-extension-sdk, see details [here](https://github.com/Microsoft/azure-devops-extension-sdk)
 * azure-devops-extension-api, see detals [here](https://github.com/Microsoft/azure-devops-extension-api)
 * azure-devops-ui (this is the new Formula Design System), see information [here](https://developer.microsoft.com/en-us/azure-devops/)
 * react-dnd, see details [here](https://github.com/react-dnd/react-dnd/) and for a tutorial [here](https://react-dnd.github.io/react-dnd/docs/tutorial)
 * react-dnd-multi-backend, see details [here](https://github.com/LouisBrunner/dnd-multi-backend/tree/master/packages/react-dnd-multi-backend)
-* some components that where missing in the Formula Design System, I have used from Fluent UI, see details [here](https://developer.microsoft.com/en-us/fluentui) 
-* lodash, see details [here](https://github.com/lodash/lodash)
 
 Many thanks to these teams and people.
 
