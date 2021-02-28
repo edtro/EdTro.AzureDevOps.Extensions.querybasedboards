@@ -15,6 +15,7 @@ At the moment these options are implemented:
 - splitup columns in doing/done **PREVIEW**
 - setup swimlanes **PREVIEW**
 - display fields **PREVIEW**
+- style Rules **PREVIEW**
 - backlog/board tabs **PREVIEW**
 
 Unfortunately, I did not have the time to complete this documentation yet (or to create a user friendly UI). Sorry about that! But I have included the model of the actual configuration, see:
@@ -25,7 +26,8 @@ export interface IConfigDataSetup {
     backlogTabs?: IConfigDataBacklogTab[],
     fields?: IConfigDataDisplayField[],
     columns?: IConfigDataColumn[],
-    swimlanes?: IConfigDataSwimlanes
+    swimlanes?: IConfigDataSwimlanes,
+    styleRules?: IConfigDataStylingRule[] //you can setup multiple rules, takes the first rule that can be applied
 }
 
 export interface IConfigDataSettings {
@@ -48,6 +50,8 @@ export interface IConfigDataBacklogTab {
 export interface IConfigDataDisplayField {
     name: string,
     title: string,    
+    type?: number, //0=standard; 1=treepath; 2=tags; 3=treepathCustom
+    filter?: boolean, //true=will allow this field (when it is text based) to be shown within the quick filters (only the first two will be used)
 }
 
 export interface IConfigDataColumn {
@@ -62,20 +66,22 @@ export interface IConfigDataColumn {
 }
 
 export interface IConfigDataColumnDoingDone {
-    field: string,
+    field: string, //no system fields like 'System.xyz'
     doingTitle: string,
     doingDefaultValue: boolean | number | string,
     doneTitle: string,
     doneValue: boolean | number | string,
+    unsupportedAPIFields?: string[]; //like the name suggest: USING THIS IS UNSUPPORTED... try at your own risk. Use the correct fieldnames, like: WEF_{ID-CODE}_Kanban.Column.Done (note: only works when field='System.BoardColumnDone')
 }
 
 export interface IConfigDataColumnParentTransitionMapping {
+    parentToNameAll: string, //the 'state' value of the parent, when a 'state' is transitioned to this 'state' (or column)
     parentToName: string, //the 'state' value of the parent, when a 'state' is transitioned to this 'state' (or column)
     allChildren: boolean //are all other children within this 'state' (or column)
 }
 
 export interface IConfigDataSwimlanes {
-    field: string,
+    field: string, //no system fields like 'System.xyz'
     defaultValue: boolean | number | string,
     values: IConfigDataSwimlaneFieldValue[],
 }
@@ -84,6 +90,20 @@ export interface IConfigDataSwimlaneFieldValue {
     value: boolean | number | string,
     title: string,
 }
+
+export interface IConfigDataStylingRule {        
+    field: string; // at this moment only the operator 'EQUAL' is implemented (and this will always the default)
+    value: string;
+    color: string; //use the HTML Hexcolor values like #RRGGBB
+}
+
+export interface IConfigDataImport {
+    id: string,
+    title: string, 
+    json: string,
+    project: string
+}
+
 ```
 <br/>
 
@@ -272,19 +292,44 @@ And finally an example of adding extra fields on the workitem cards:
    "fields":[
       {
          "name":"System.AreaPath",
-         "title":"Area",       
+         "title":"Area",
+         "filter": true       
       },
       {
          "name":"System.IterationPath",
-         "title":"Sprint",       
+         "title":"Sprint"       
       },
       {
          "name":"Microsoft.VSTS.Common.Priority",
-         "title":"Priority",       
+         "title":"Priority"       
       },
+      {
+         "name":"System.Tags",
+         "title":"Tags",
+         "filter": true
+      },
+      {
+         "name":"System.Parent",
+         "title":"Parent"
+      }
+   ],
+   "styleRules":[
+      {
+         "field":"Microsoft.VSTS.Common.Priority",
+         "value":1,
+         "color":"#FF0000"       
+      },
+     {
+         "field":"Microsoft.VSTS.Common.Priority",
+         "value":2,
+         "color":"#FFA500"       
+      }  
    ]
-}
+} 
 ```
-
-
 > Please note: for the display fields the types Guid, History, Html and Identity are not supported.
+
+While adding the 'System.Tags' to the 'Fields' will not enable you to display the field (you should use the settings), but it will enable you to filter on this field
+It is also possible to filter on Areas and Iterations (and on all other text-based fields... unfortunately numbers/guid/etc... are not supported)
+
+When you have added the field, it is also possible to add a styling rule.
