@@ -51,7 +51,9 @@ export interface IConfigDataDisplayField {
     name: string,
     title: string,    
     type?: number, //0=standard; 1=treepath; 2=tags; 3=treepathCustom
-    filter?: boolean, //true=will allow this field (when it is text based) to be shown within the quick filters (only the first two will be used)
+    filter?: boolean, //true=will allow this field (when it is text based) to be shown within the quick filters (only the first two will be used),
+    tagColor?: string, //use the HTML Hexcolor values like #RRGGBB,
+    nestedFilterFieldName?: string, //one of the other display fields (with filter=true)... does not work with tags (multi value) or type=2 (an aggregation)
 }
 
 export interface IConfigDataColumn {
@@ -92,7 +94,7 @@ export interface IConfigDataSwimlaneFieldValue {
 }
 
 export interface IConfigDataStylingRule {        
-    field: string; // at this moment only the operator 'EQUAL' is implemented (and this will always the default)
+    field: string; //at this moment only the operator 'EQUAL' is implemented (and this will always the default)
     value: string;
     color: string; //use the HTML Hexcolor values like #RRGGBB
 }
@@ -103,7 +105,6 @@ export interface IConfigDataImport {
     json: string,
     project: string
 }
-
 ```
 <br/>
 
