@@ -317,12 +317,12 @@ And finally an example of adding extra fields on the workitem cards:
    "styleRules":[
       {
          "field":"Microsoft.VSTS.Common.Priority",
-         "value":1,
+         "value":"1",
          "color":"#FF0000"       
       },
      {
          "field":"Microsoft.VSTS.Common.Priority",
-         "value":2,
+         "value":"2",
          "color":"#FFA500"       
       }  
    ]
