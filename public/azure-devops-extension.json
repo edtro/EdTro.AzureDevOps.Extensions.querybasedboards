@@ -10,10 +10,6 @@
     "color": "rgb(217, 217, 217)",
     "theme": "light"
   },
-  //"branding": {
-  //  "color": "rgb(0, 85, 115)",
-  //  "theme": "dark"
-  //},
   "categories": [
     "Azure Boards"
   ],
@@ -93,8 +89,7 @@
       "description": "Adds a 'Query Based Boards - Show Board / Show Taskboard' tab to the product/itetation backlog view",
       "targets": [
         "ms.vss-work-web.product-backlog-tabs",
-        "ms.vss-work-web.iteration-backlog-tabs",
-        "ms.vss-work-web.backlog-board-pivot-filter-menu"
+        "ms.vss-work-web.iteration-backlog-tabs"
       ],
       "properties": {
         "uri": "index.html?type=backlog&id=1",
@@ -109,8 +104,7 @@
       "description": "Adds a 'Query Based Boards - Show Board / Show Taskboard' tab to the product/itetation backlog view",
       "targets": [
         "ms.vss-work-web.product-backlog-tabs",
-        "ms.vss-work-web.iteration-backlog-tabs",
-        "ms.vss-work-web.backlog-board-pivot-filter-menu"
+        "ms.vss-work-web.iteration-backlog-tabs"
       ],
       "properties": {
         "uri": "index.html?type=backlog&id=2",
@@ -125,8 +119,7 @@
       "description": "Adds a 'Query Based Boards - Show Board / Show Taskboard' tab to the product/itetation backlog view",
       "targets": [
         "ms.vss-work-web.product-backlog-tabs",
-        "ms.vss-work-web.iteration-backlog-tabs",
-        "ms.vss-work-web.backlog-board-pivot-filter-menu"
+        "ms.vss-work-web.iteration-backlog-tabs"
       ],
       "properties": {
         "uri": "index.html?type=backlog&id=3",
@@ -141,8 +134,7 @@
       "description": "Adds a 'Query Based Boards - Show Board / Show Taskboard' tab to the product/itetation backlog view",
       "targets": [
         "ms.vss-work-web.product-backlog-tabs",
-        "ms.vss-work-web.iteration-backlog-tabs",
-        "ms.vss-work-web.backlog-board-pivot-filter-menu"
+        "ms.vss-work-web.iteration-backlog-tabs"
       ],
       "properties": {
         "uri": "index.html?type=backlog&id=4",
@@ -157,8 +149,7 @@
       "description": "Adds a 'Query Based Boards - Show Board / Show Taskboard' tab to the product/itetation backlog view",
       "targets": [
         "ms.vss-work-web.product-backlog-tabs",
-        "ms.vss-work-web.iteration-backlog-tabs",
-        "ms.vss-work-web.backlog-board-pivot-filter-menu"
+        "ms.vss-work-web.iteration-backlog-tabs"
       ],
       "properties": {
         "uri": "index.html?type=backlog&id=5",
