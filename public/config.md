@@ -59,12 +59,13 @@ export interface IConfigDataDisplayField {
 export interface IConfigDataColumn {
     name: string,
     title: string,   
+    field?: string, //when undefined or empty 'System.State' is used, no system fields like 'System.xyz' (except 'System.IterationPath' and 'System.AreaPath'). Multiple fields are not allowed (first is used)
     isBacklog?: boolean,
     isCollapsed?: boolean, //backlog=true
     width?: number, //backlog=false && between 1 and 5
     wipLimit?: number, //backlog=false && if >= 0 then count and limit will be displayed 
-    doingDone?: IConfigDataColumnDoingDone,
-    parentTransitionMapping?: IConfigDataColumnParentTransitionMapping
+    doingDone?: IConfigDataColumnDoingDone, // only for field 'System.State'
+    parentTransitionMapping?: IConfigDataColumnParentTransitionMapping // only for field 'System.State'
 }
 
 export interface IConfigDataColumnDoingDone {
@@ -287,7 +288,7 @@ Here is an example of using default values for a setting and the setup of backlo
 ```
 <br/>
 
-And finally an example of adding extra fields on the workitem cards:
+Here is an example of adding extra fields on the workitem cards:
 ```json
 {
    "fields":[
@@ -317,12 +318,12 @@ And finally an example of adding extra fields on the workitem cards:
    "styleRules":[
       {
          "field":"Microsoft.VSTS.Common.Priority",
-         "value":"1",
+         "value":1,
          "color":"#FF0000"       
       },
      {
          "field":"Microsoft.VSTS.Common.Priority",
-         "value":"2",
+         "value":2,
          "color":"#FFA500"       
       }  
    ]
@@ -334,3 +335,50 @@ While adding the 'System.Tags' to the 'Fields' will not enable you to display th
 It is also possible to filter on Areas and Iterations (and on all other text-based fields... unfortunately numbers/guid/etc... are not supported)
 
 When you have added the field, it is also possible to add a styling rule.
+
+And finally here is an example to show iterations as columns (this is a **preview feature**):
+```
+{
+   "columns":[
+      {
+         "name":"MyProjectName",
+         "field":"System.IterationPath",
+         "title":"Backlog",
+         "isBacklog":true
+      },
+      {
+         "name":"MyProjectName\\Sprint 1",
+         "field":"System.IterationPath",
+         "title":"#Sprint 1"
+      },
+      {
+         "name":"MyProjectName\\Sprint 2",
+         "field":"System.IterationPath",
+         "title":"#Sprint 2"
+      },
+      {
+         "name":"MyProjectName\\Sprint 3",
+         "field":"System.IterationPath",
+         "title":"#Sprint 3"
+      }
+   ],
+   "settings":{
+      "showFilter":true,
+      "zoomLevel": 4,
+      "showStoryPoints": true,
+      "showTags": true
+   },
+   "fields":[
+      {
+         "name":"System.State",
+         "title":"State",     
+         "type": 0,
+         "filter": true
+      }
+   ]
+}
+```
+
+Please note: I am reusing the code that I have made for the workitem states, so "name" is the actual value of the field. For the IterationPath/AreaPath you will need to provide the full path including the projectname.
+Also make sure to provide the "field" for every column and make sure it is the same field. Or you could get very strange results.
+
