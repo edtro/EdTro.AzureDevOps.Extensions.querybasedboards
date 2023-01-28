@@ -18,3 +18,28 @@ Many thanks to these teams and people.
 
 > NOTE: this the second version of this extension. The first version was created by a former colleague of ours, all the credits for coming up with this idea is going to him! This version is however rebuild completely, based on the new Azure DevOps extension libraries and the new Formula Design System. 
 > The old and original project is still available on the marketplace [here](https://marketplace.visualstudio.com/items?itemName=realdolmen.querybasedboards)
+
+
+Full list of dependencies:
+``` json
+{
+  "dependencies": {
+    "@types/lodash": "^4.14.165",
+    "@types/react-dnd-html5-backend": "^3.0.2",
+    "@types/react-dnd-multi-backend": "^5.0.0",
+    "@types/react-dnd-touch-backend": "^0.5.0",
+    "azure-devops-extension-api": "^1.158.0",
+    "azure-devops-extension-sdk": "^2.0.11",
+    "azure-devops-ui": "^2.167.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
+    "office-ui-fabric-react": "^7.0.0",
+    "react": "^16.8.6",
+    "react-dnd": "^10.0.2",
+    "react-dnd-html5-backend": "^10.0.2",
+    "react-dnd-multi-backend": "^5.0.0",
+    "react-dnd-touch-backend": "^10.0.2",
+    "react-dom": "^16.8.6"
+  }
+}
+```
