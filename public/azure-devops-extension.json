@@ -51,13 +51,19 @@
       "packagePath": "img"
     },
     {
-      "path": "js",
+      "path": "static/js",
       "addressable": true,
-      "packagePath": "js"
+      "packagePath": "static/js"
     },
     {
-      "path": "index.qbb.bundle.js",
-      "addressable": true
+      "path": "static/css",
+      "addressable": true,
+      "packagePath": "static/css"
+    },
+    {
+      "path": "static/media",
+      "addressable": true,
+      "packagePath": "static/media"
     },
     {
       "path": "details.md",

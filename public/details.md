@@ -20,15 +20,20 @@ Here is a [link](https://youtu.be/tod0S2QXO-E) to an introduction video on YouTu
 ## Known limitations
 * This extension is currently only available on Azure DevOps Services and Azure DevOps Server (demands the API version 5.0 at least; so it works on-line and on the on-premises versions 2019 and 2020);
 * Be aware: this extension is created and supported for "on-line" first (like many other extensions). For "on-premises" instances there is limited support;
-* Only 'flat' and 'one-hop' queries are implemented;
-* When you use a 'one-hop' query, only the `Parent-Child` relations are suppported;
+* Only 'flat' and 'one-hop' queries are implemented (a first preview is available to use 'tree' queries);
+* When you use a 'one-hop' query, only the `Parent-Child` relations are suppported (this is also the case for the 'tree' queries);
 * The dependency arrows are based on `Successor-Predecessor` relations only;
 * The columns are based on the values of the field `System.State` only;
-* Only tested and validated on Chrome, FireFox and Edge (the new Chronium based version) for a regular non-touch device;
+* Only tested and validated on Chrome, FireFox and Edge (the new Chromium based version) for a regular non-touch device;
 * Only tested and validated on Safari (IPhone) for a touch device;
 * A couple of features are still in 'preview'.
 
 (please review: https://github.com/edtro/EdTro.AzureDevOps.Extensions.querybasedboards/issues)
+
+## Preview
+It is possible to get access to the 'preview' version of this extension. This version is available for early-adaptors / testers that want to have early access to new features and/or fixes. Please follow the instructions here: [Get access to the PREVIEW](https://github.com/edtro/EdTro.AzureDevOps.Extensions.querybasedboards/issues/62)
+
+> NOTE: this is not available for on-premise installations of Azure DevOps Server. Please do not use the 'preview' version of the extension within a Production environment.
 
 ## Feedback
 Please feel free to leave a behind your feedback within the Q & A section. We love to hear from you.
@@ -36,8 +41,15 @@ Please feel free to leave a behind your feedback within the Q & A section. We lo
 ## Changelog
 
 | Version | Description |
-|---------|-------------| 
+|---------|-------------|
+| 0.23028 | Fixed a number of minor bugs and **(finally) added the posibility to use 'tree' queries within the board**. The 'tree' queries will be displayed as a Taskboard, here is a screenshot to show you an example: <br/> ![screenshot](img/taskboard-tree.png) <br/> You can select the level within the filter/toolbar that you want to display (e.g. select 'Features' when you want to see the Features with its User Stories). When the query is displayed within the Backlog hub, the query will respond to the selection of the Backlog level automatically. <br/><br/>The main use-case this new feature supports: if you want a Taskboard of Features with its User Stories that are descendents of a specific Epic (or a higher level), you can now achieve this while using a 'tree' query and this extension.|
+| 0.23014* | Updated the Dev dependencies (moved to CRA to setup/maintain the project) and bumped the versions of packages where needed. | 
+| 0.22329* | Removed the 'IMPORTANT NOTICE' regarding the bugs that Microsoft had to resolve, while implementing the 'Azure Boards Ux Modernization' (see: https://devblogs.microsoft.com/devops/azure-boards-ux-modernization-public-preview/). I have received the confirmation that these bugs are resolved. |
+| 0.22184 | Added a new preview feature that allows you to base the columns on other fields (e.g. the field `System.IterationPath`) than just the field `System.State`. Please review the 'Get-Started' section on how to do it, here is a screenshot to show you an example: <br/> ![screenshot](img/kanban-iterations.png)
+| 0.21350 | Fixed a bug regarding datetime fields that can be shown on the card. The 'azure-devops-ui/Ago' was used, but this library cannot handle future dates as of yet. |
 | 0.21262 | Fixed a bug regarding registrations within the manifest file. |
+| 0.21068 | Applied a couple of minor changes to: <br/> - the filters: using the internal documents service of the SDK to store the filter user cache for the queries; <br/> - the filters: fix to the type=3 because nothing was shown anymore, also corrected the grouping for nested filters; <br/> - stylerules: when a stylerule is setup the forecolor/textcolor will be like the 'light' theme. |
+| 0.21067 | Couldn's use browser cookies (so cancelled this change), so have to use internal documents instead but this is still WIP|
 | 0.21066 | Applied a couple of minor changes to: <br/> - the stylerules: you can now apply a stylerule based on a field, that is not displayed; <br/> - the display fields with Type=2 (tags): added a 'tagColor' field to distinguish multiple fields (highly usefull when you are using the 'Multivalue control' extension); <br/> - the filters: the Work Item Type filter displayed all of the types, instead of only the 'Child' types, so this is fixed; <br/> - the filters: within the browser the last active filters are stored within the sessiondata, so it is not cleared when you browse to an other page/url; <br/> - the filters: when selecting on '(empty)' with paths/tags the result was incorrect, this is adjusted; <br/> - the filters: add the possibility to use nested custom filters. |
 | 0.21059 | Solved a couple of minor rendering bugs and solved the bug that the 'doing' column was not displayed within the taskboard.<br/><br/> Also added a couple of new PREVIEW features: <br/> - when you use the field 'System.Parent' within the 'advanced config/fields', the full styling is now implemented including clicktrough; <br/> - this field will also be available within the quick filters; <br/> - for the 'Taskboard' it makes no sense to filter on the already visible parent level itself, so it will allow you to filter on the grandparents (within the 'taskboard' this field will only be visible within that level); <br/> - the first two config fields (of the type 'text' and when they are enabled with 'filter=true') are added to the quick filters, even the areapath/iterationpath and tags fields. **This will also enable you to filter on custom fields;** <br/> - added an override 'type' field to the config display fields, so fields can be displayed as paths/tags (and filtered as such); <br/> - very basic styling rules for the cards are implemented within the advanced configurations. <br/><br/> *Please note: these items are still in preview, so please report questions/bugs etc. to contribute on these features, but please do not expect immediate response and/or follow up.*| 
 | 0.21044 | Resolved a bug for the import function (the configs where not imported when no document existed for a query)|
@@ -57,6 +69,8 @@ Please feel free to leave a behind your feedback within the Q & A section. We lo
 | 0.20065 | Improved the styling of the arrows and added zoom level slider.|
 | 0.20064 | Solved minor bugs for on-prem.|
 | 0.20062 | Initial version.|
+
+> *) these versions where not officially published 
 
 If this project inspires you and/or you have specific requirements that are not not implemented within the standard and/or this project, please feel free to contact us, so we can see how we can help.
 
